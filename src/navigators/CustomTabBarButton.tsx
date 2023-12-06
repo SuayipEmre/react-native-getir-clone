@@ -5,7 +5,7 @@ import colors from "../styles/colors"
 const CustomtabBarButton = () => {
     return (
         <TouchableOpacity style={styles.container}>
-            <Entypo name='list' size={32} color='#ffd00c' />
+            <Entypo name='list' size={32} color={colors.yellow} />
         </TouchableOpacity>
     )
 }

@@ -21,7 +21,7 @@ const RootNavigator = () => {
     return (
         <NavigationContainer>
             <Tab.Navigator
-                initialRouteName='Home'
+                initialRouteName='HomeNavigator'
                 screenOptions={{
                     tabBarHideOnKeyboard: true,
                     tabBarShowLabel: false,
@@ -32,7 +32,7 @@ const RootNavigator = () => {
                 }}>
 
                 <Tab.Screen
-                    name='Home'
+                    name='HomeNavigator'
                     component={HomeNavigator}
                     options={{
                         tabBarIcon: ({ color }) => (

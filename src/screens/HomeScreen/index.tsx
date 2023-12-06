@@ -2,11 +2,10 @@ import React from 'react'
 import HeaderMain from '../../components/headerMain'
 import { ScrollView, StyleSheet } from 'react-native'
 import BannerCarousel from '../../components/BannerCarousel'
-import CategoryItem from '../../components/categories/categoryItem'
 import CategoryMain from '../../components/categories/main'
 
 
-const HomeScreen : React.FC = () => {
+const Home : React.FC = () => {
 
     return (
         <ScrollView style={styles.container} stickyHeaderIndices={[0]}>
@@ -17,7 +16,7 @@ const HomeScreen : React.FC = () => {
     )
 }
 
-export default HomeScreen
+export default Home
 
 
 export const styles = StyleSheet.create({
