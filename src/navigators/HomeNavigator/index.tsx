@@ -1,21 +1,18 @@
 import React, { useLayoutEffect } from 'react'
-import { Image, Text, TouchableOpacity, Dimensions, View } from 'react-native';
+import { Image, Text, TouchableOpacity} from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Ionicons, AntDesign, FontAwesome5 } from '@expo/vector-icons';
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
-import HomeScreen from '../screens/HomeScreen';
-import colors from '../styles/colors';
-import CategoryFilterScreen from '../screens/ProductsScreen';
-import ProductDetails from '../screens/ProductDetailsScreen';
-import CustomHeaderRight from './customNavComponents/CustomHeaderRightCart';
-import Cart from '../screens/CartScreen';
-import { clearCart, setKeyForCartRender } from '../redux/features/cart/actions';
-
+import HomeScreen from '../../screens/HomeScreen';
+import colors from '../../styles/colors';
+import CategoryFilterScreen from '../../screens/ProductsScreen';
+import ProductDetails from '../../screens/ProductDetailsScreen';
+import CustomHeaderRight from './CustomHeaderRightCart';
+import Cart from '../../screens/CartScreen';
+import { clearCart, setKeyForCartRender } from '../../redux/features/cart/actions';
 
 
 const Stack = createNativeStackNavigator()
-
-
 
 
 const HomeStack: React.FC<any> = ({ navigation, route }) => {
@@ -51,7 +48,7 @@ const HomeStack: React.FC<any> = ({ navigation, route }) => {
                 resizeMode: 'contain',
                 marginTop: -20,
               }}
-              source={require('../../assets/getirlogo.png')} />
+              source={require('../../../assets/getirlogo.png')} />
           )
         }}
 

@@ -1,4 +1,4 @@
-import { Dimensions, FlatList, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { Dimensions,   StyleSheet, View } from 'react-native'
 import React from 'react'
 import products from '../../../../../../assets/products'
 import ProductCard from '../../../../productCard'

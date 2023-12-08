@@ -8,6 +8,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import CustomtabBarButton from './customNavComponents/CustomTabBarButton';
 import colors from '../styles/colors';
+import Profile from '../screens/ProfileScreen';
+import ProfileNavigator from './ProfileNavigator';
 const Tab = createBottomTabNavigator();
 
 
@@ -57,12 +59,13 @@ const RootNavigator = () => {
                 />
 
                 <Tab.Screen
-                    name='User'
-                    component={HomeNavigator}
+                    name='Profile'
+                    component={ProfileNavigator}
                     options={{
                         tabBarIcon: ({ color }) => (
                             <Ionicons name="person" size={24} color={color} />
-                        )
+                        ),
+                    
                     }}
                 />
 
