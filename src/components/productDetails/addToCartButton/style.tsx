@@ -1,4 +1,4 @@
-import { StyleSheet, Dimensions } from "react-native";
+import { StyleSheet, Dimensions} from "react-native";
 import colors from "../../../styles/colors";
 
 const { height } = Dimensions.get('window')
@@ -13,6 +13,10 @@ export default StyleSheet.create({
         bottom: 0,
         right: 0,
         left: 0,
+
+      
+
+
     },
     button_container: {
         backgroundColor: colors.purple,

@@ -1,24 +1,30 @@
 import React, { useLayoutEffect } from 'react'
+import { Image, Text, TouchableOpacity, Dimensions, View } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Ionicons, AntDesign, FontAwesome5 } from '@expo/vector-icons';
+import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import HomeScreen from '../screens/HomeScreen';
-import { Image, Text,  TouchableOpacity } from 'react-native';
 import colors from '../styles/colors';
 import CategoryFilterScreen from '../screens/ProductsScreen';
 import ProductDetails from '../screens/ProductDetailsScreen';
-import { Ionicons, AntDesign } from '@expo/vector-icons';
-import { getFocusedRouteNameFromRoute, useNavigation } from '@react-navigation/native';
+import CustomHeaderRight from './customNavComponents/CustomHeaderRightCart';
+import Cart from '../screens/CartScreen';
+
+
 
 const Stack = createNativeStackNavigator()
 
-const tabHiddenRoutes = 'ProductDetails'
+
 
 
 const HomeStack: React.FC<any> = ({ navigation, route }) => {
 
-  
+  const tabHiddenRoutes  = ['ProductDetails', 'Cart' ]
+
   useLayoutEffect(() => {
     const routeName = getFocusedRouteNameFromRoute(route);
-    
+
+    //@ts-ignore
     if (tabHiddenRoutes.includes(routeName)) {
       navigation.setOptions({ tabBarStyle: { display: "none" } });
     } else {
@@ -60,7 +66,9 @@ const HomeStack: React.FC<any> = ({ navigation, route }) => {
             backgroundColor: colors.purple,
 
           },
-          headerTitle: () => <Text style={{ color: '#fff', fontSize: 14, fontWeight: 'bold' }}>Ürünler</Text>
+          headerTitle: () => <Text style={{ color: '#fff', fontSize: 14, fontWeight: 'bold' }}>Ürünler</Text>,
+
+          headerRight: () => (<CustomHeaderRight />),
 
         }}
 
@@ -68,14 +76,13 @@ const HomeStack: React.FC<any> = ({ navigation, route }) => {
 
 
       <Stack.Screen
-
         name='ProductDetails'
         component={ProductDetails}
         options={{
 
           headerTintColor: '#fff',
           headerBackTitleVisible: false,
-          
+
           headerStyle: {
             backgroundColor: colors.purple
           },
@@ -87,24 +94,47 @@ const HomeStack: React.FC<any> = ({ navigation, route }) => {
           ),
           headerRight: () => (
             <TouchableOpacity activeOpacity={.9} >
-             <AntDesign name="heart" size={22} color="#32177a" />
+              <AntDesign name="heart" size={22} color="#32177a" />
             </TouchableOpacity>
           ),
           headerTitle: () => (
             <Text style={{ color: '#fff', fontSize: 14, fontWeight: 'bold' }}>Ürün Detayı</Text>
           ),
 
-      
+
         }}
       />
 
+      <Stack.Screen
+        name='Cart'
+        component={Cart}
+        options={{
+          headerTintColor: '#fff',
+          headerBackTitleVisible: false,
+          headerStyle: {
+            backgroundColor: colors.purple
+          },
+          headerTitle: () => <Text style={{ color: '#fff', fontSize: 14, fontWeight: 'bold' }}>Sepetim</Text>,
+          headerLeft: () => (
+            <TouchableOpacity activeOpacity={.9} onPress={() => navigation.goBack()}>
+              <Ionicons name='close' size={22} color='#fff' />
+            </TouchableOpacity>
+          ),
+
+          headerRight: () => (
+            <TouchableOpacity activeOpacity={.9}>
+              <FontAwesome5 name="trash-alt" size={20} color="#fff" />
+            </TouchableOpacity>
+          )
+        }}
+      />
 
     </Stack.Navigator>
   )
 }
 
-const HomeNavigator : React.FC <any> = ({ navigation, route}) => {
-  return <HomeStack navigation={navigation} route={route}  />;
+const HomeNavigator: React.FC<any> = ({ navigation, route }) => {
+  return <HomeStack navigation={navigation} route={route} />;
 }
 
 

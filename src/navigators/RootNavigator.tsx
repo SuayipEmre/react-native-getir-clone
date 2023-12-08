@@ -6,7 +6,7 @@ import HomeNavigator from './HomeNavigator'
 import { EvilIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
-import CustomtabBarButton from './CustomTabBarButton';
+import CustomtabBarButton from './customNavComponents/CustomTabBarButton';
 import colors from '../styles/colors';
 const Tab = createBottomTabNavigator();
 

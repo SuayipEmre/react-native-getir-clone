@@ -1,6 +1,6 @@
 import { Entypo } from "@expo/vector-icons"
 import { StyleSheet, TouchableOpacity } from "react-native"
-import colors from "../styles/colors"
+import colors from "../../styles/colors"
 
 const CustomtabBarButton = () => {
     return (
