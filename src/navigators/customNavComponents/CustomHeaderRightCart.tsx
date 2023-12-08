@@ -1,11 +1,18 @@
 import { Dimensions, Image, StyleSheet, Text, View, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import colors from '../../styles/colors'
 import { useNavigation } from '@react-navigation/native'
+import { useCartTotalPrice } from '../../redux/features/cart/hooks'
 const { width } = Dimensions.get('window')
 
 
 const CustomHeaderRight : React.FC<any> = () => { 
+  const [cartTotalPrice, setCartTotalPrice] = useState(0)
+  const totalPrice = useCartTotalPrice()
+
+  useEffect(() => {
+    setCartTotalPrice(totalPrice)
+  },[totalPrice])
 
   const navigation = useNavigation()
   const handleClick = () => navigation.navigate('Cart')
@@ -16,7 +23,7 @@ const CustomHeaderRight : React.FC<any> = () => {
       <View style={styles.container}>
         <Image source={require('../../../assets/cart.png')} style={styles.image} />
         <View style={styles.content_container}>
-          <Text style={styles.price}>₺124.00</Text>
+          <Text style={styles.price}>{cartTotalPrice.toFixed(2)}</Text>
         </View>
       </View>
     </TouchableOpacity>

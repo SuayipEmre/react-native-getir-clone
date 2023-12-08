@@ -1,6 +1,16 @@
+import { Provider } from 'react-redux';
 import RootNavigator from './src/navigators/RootNavigator';
+import { store } from './src/redux/app';
 
-export default function App() {
-  return <RootNavigator />
+
+
+const App = () => {
+  return (
+    <Provider store={store}>
+      <RootNavigator />
+    </Provider>
+  )
 }
 
+
+export default App

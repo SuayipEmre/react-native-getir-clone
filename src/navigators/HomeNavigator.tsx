@@ -9,6 +9,7 @@ import CategoryFilterScreen from '../screens/ProductsScreen';
 import ProductDetails from '../screens/ProductDetailsScreen';
 import CustomHeaderRight from './customNavComponents/CustomHeaderRightCart';
 import Cart from '../screens/CartScreen';
+import { clearCart, setKeyForCartRender } from '../redux/features/cart/actions';
 
 
 
@@ -122,7 +123,7 @@ const HomeStack: React.FC<any> = ({ navigation, route }) => {
           ),
 
           headerRight: () => (
-            <TouchableOpacity activeOpacity={.9}>
+            <TouchableOpacity activeOpacity={.9} onPress={() => {clearCart(), setKeyForCartRender()}}>
               <FontAwesome5 name="trash-alt" size={20} color="#fff" />
             </TouchableOpacity>
           )

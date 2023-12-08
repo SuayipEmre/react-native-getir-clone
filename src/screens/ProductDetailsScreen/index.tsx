@@ -7,6 +7,7 @@ import DetailBox from '../../components/productDetails/detailBox'
 import styles from './style'
 import DetailContent from '../../components/productDetails/detailContent'
 import Button from '../../components/productDetails/addToCartButton'
+import { getCartTotal } from '../../redux/features/cart/actions'
 
 const ProductDetails: React.FC<any> = ({ route }) => {
   const [product, setProduct] = useState<productType>()
@@ -23,14 +24,14 @@ const ProductDetails: React.FC<any> = ({ route }) => {
     <View style={styles.container}>
       <ScrollView >
         <ImageCarousel images={product?.images} />
-        <DetailBox quantity={product.miktar} name={product.name} price={product.fiyat} />
+        <DetailBox quantity={product.miktar} name={product.name} price={product.price} />
 
         <Text style={styles.title}>Detaylar</Text>
 
         <DetailContent />
 
       </ScrollView>
-      <Button />
+      <Button product={product} />
     </View>
   )
 }

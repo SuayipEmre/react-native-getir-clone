@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {  View } from 'react-native'
+import { View } from 'react-native'
 
 import styles from './style'
 import CategoryItem from '../categoryItem'

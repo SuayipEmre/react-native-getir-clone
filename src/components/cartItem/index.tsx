@@ -1,15 +1,15 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image} from 'react-native'
+import { Text, View, Image } from 'react-native'
 import styles from './style'
 import { Entypo } from '@expo/vector-icons';
 import colors from '../../styles/colors';
-import KeppGoing from '../keepGoing/'
 import { productType } from '../../models';
+import EditCart from './editProductCount';
 
 
 
 type propType = {
-    product: productType
+    product: productType & {count : number}
 }
 
 const CartItem: React.FC<propType> = ({ product }) => {
@@ -29,21 +29,15 @@ const CartItem: React.FC<propType> = ({ product }) => {
                     <View style={styles.product_info_container}>
                         <Text style={styles.product_name}>{product.name}</Text>
                         <View style={styles.price_container}>
-                            <Text style={styles.old_price}>₺{product.fiyat}</Text>
-                            <Text style={styles.new_price}>₺{product.fiyatIndirimli}</Text>
+                            <Text style={styles.old_price}>₺{product.price}</Text>
+                            <Text style={styles.new_price}>₺{product.reducedPrice}</Text>
                         </View>
                     </View>
 
                     {/*Count */}
                     <View style={styles.quantity_container} >
 
-                        <View style={styles.quantity_content}>
-                            <Entypo name="minus" size={24} color={colors.purple} />
-                            <View style={styles.count_container}>
-                                <Text style={styles.count}>1</Text>
-                            </View>
-                            <Entypo name="plus" size={20} color={colors.purple} />
-                        </View>
+                        <EditCart  count={product.count} productID = {product.id} />
 
                     </View>
 
@@ -56,5 +50,4 @@ const CartItem: React.FC<propType> = ({ product }) => {
 
     )
 }
-//  
 export default CartItem

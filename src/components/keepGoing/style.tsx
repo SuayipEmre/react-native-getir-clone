@@ -48,11 +48,6 @@ export default StyleSheet.create({
         shadowOpacity: 0.3,
         elevation: 8,
     },
-    old_price: {
-        fontSize: 16,
-        color: colors.gray,
-        textDecorationLine: 'line-through'
-    },
     new_price:{
         color: colors.purple,
         fontWeight: 'bold',

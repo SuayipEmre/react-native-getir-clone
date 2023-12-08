@@ -35,7 +35,7 @@ export default StyleSheet.create({
     image: {
         width: '80%',
         height: '50%',
-        borderWidth: 1,
+        borderWidth: 2,
         borderColor: '#F5F5F5',
         borderRadius: 14,
     },
@@ -77,25 +77,7 @@ export default StyleSheet.create({
         shadowOpacity: 0.3,
         elevation: 8, // Android için gölge efekti
     },
-    quantity_content: {
-        gap: 10,
-        width: '70%',
-        height :'100%',
-        paddingHorizontal: 12,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    count_container: {
-        backgroundColor: colors.purple,
-        width: '70%',
-        height: '100%',
-        justifyContent: 'center',
-        alignItems: 'center'
-
-    },
-    count: {
-
-        color: '#fff',
-    },
+  
+  
+   
 })
