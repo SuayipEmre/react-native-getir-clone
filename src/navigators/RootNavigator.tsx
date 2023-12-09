@@ -12,6 +12,7 @@ import Profile from '../screens/ProfileScreen';
 import ProfileNavigator from './ProfileNavigator';
 import SearchNavigator from './SearchNavigator';
 import { View } from 'react-native';
+import CampaignsNavigator from './CampaignsNavigator';
 const Tab = createBottomTabNavigator();
 
 
@@ -81,8 +82,8 @@ const RootNavigator = () => {
 
 
                 <Tab.Screen
-                    name='Gift'
-                    component={HomeNavigator}
+                    name='CampaignsNavigator'
+                    component={CampaignsNavigator}
                     options={{
                         tabBarIcon: ({ color }) => (
                             <Feather name="gift" size={24} color={color} />

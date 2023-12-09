@@ -1,30 +1,30 @@
 import React from 'react'
-import { ScrollView} from 'react-native'
+import { ScrollView, View, Text } from 'react-native'
 import styles from './style'
 import categories from '../../../../assets/categories'
 import categoryType from '../../../models'
-import CategoryBox from './categoryBox'
 
 
 
 type CategoriesHeaderType = {
-  category : categoryType
+  category: categoryType
 }
 
-const CategoriesHeader: React.FC<CategoriesHeaderType> = ({category}) => {
-  
-
+const CategoriesHeader: React.FC<CategoriesHeaderType> = ({ category }) => {
 
   return (
     <ScrollView
-      style={styles.container}
+      style={styles.main_container}
       horizontal
       bounces
       showsHorizontalScrollIndicator={false}
     >
 
       {
-        categories.map((item, idx) => (<CategoryBox item={item} key={idx} active={category} />))
+        categories.map((item) => (
+          <View key={item.id} style={styles.container}>
+            <Text style={[styles.text, item.name == category.name && styles.active_text]} >{item.name}</Text>
+          </View>))
       }
 
 
@@ -32,4 +32,9 @@ const CategoriesHeader: React.FC<CategoriesHeaderType> = ({category}) => {
   )
 }
 
+
+
+        
+        
+      
 export default CategoriesHeader

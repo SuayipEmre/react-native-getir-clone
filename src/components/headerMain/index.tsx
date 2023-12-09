@@ -2,6 +2,8 @@ import { Text, View } from 'react-native'
 import React from 'react'
 import styles from './style'
 import { Entypo, Ionicons } from '@expo/vector-icons'
+
+
 const HeaderMain : React.FC = () => {
     return (
         <View style={styles.header_main}>

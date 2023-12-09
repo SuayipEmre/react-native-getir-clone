@@ -1,7 +1,6 @@
 import { StyleSheet, Dimensions } from "react-native";
-import colors from "../../../styles/colors";
 
-const {width, height} = Dimensions.get('window')
+const {height} = Dimensions.get('window')
 
 export default StyleSheet.create({
     container:{
@@ -17,7 +16,5 @@ export default StyleSheet.create({
         fontSize : 14,
         fontWeight : '500'
     },
-    right_icon:{},
-  
   
 })

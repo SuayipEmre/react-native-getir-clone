@@ -7,7 +7,6 @@ import DetailBox from '../../components/productDetails/detailBox'
 import styles from './style'
 import DetailContent from '../../components/productDetails/detailContent'
 import Button from '../../components/productDetails/addToCartButton'
-import { getCartTotal } from '../../redux/features/cart/actions'
 
 const ProductDetails: React.FC<any> = ({ route }) => {
   const [product, setProduct] = useState<productType>()

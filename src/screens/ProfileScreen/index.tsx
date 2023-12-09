@@ -2,18 +2,21 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Login from '../../components/profileComp/login'
 import ContentBody from '../../components/profileComp/contentBody'
-import FooterInfo from '../../components/profileComp/footer'
 import LetsGetStartedModal from '../../components/profileComp/letsGetStartedModal'
+import Language from '../../components/profileComp/language'
+import Version from '../../components/profileComp/version'
 
 const Profile = () => {
   return (
     <View style={styles.container}>
       <Login />
       <ContentBody />
+
       <Text style={styles.info}>Language - Dil</Text>
-      <FooterInfo text='Language - Dil' />
+      <Language />
+
       <Text style={styles.info}>Versiyon</Text>
-      <FooterInfo text='2.17.20' />
+      <Version />
       <LetsGetStartedModal />
     </View>
   )

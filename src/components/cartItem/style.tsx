@@ -75,7 +75,7 @@ export default StyleSheet.create({
         borderRadius :12,
         shadowColor: colors.purple,
         shadowOpacity: 0.3,
-        elevation: 8, // Android için gölge efekti
+        elevation: 8, 
     },
   
   

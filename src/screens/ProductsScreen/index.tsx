@@ -1,5 +1,5 @@
-import { StyleSheet, ScrollView, Text, View } from 'react-native'
-import React, { useEffect, useState } from 'react'
+import {  ScrollView} from 'react-native'
+import React, {  useState } from 'react'
 import categoryType from '../../models';
 import SubCategories from '../../components/productsByCategory/categoryHeader/subCategories';
 import CategoriesHeader from '../../components/productsByCategory/categoryHeader';
@@ -12,13 +12,9 @@ const Products: React.FC<any> = ({ route }) => {
 
   return (
     <ScrollView>
-
       <CategoriesHeader category={category} />
       <SubCategories />
-
       <ProductsContainer />
-
-
     </ScrollView>
   )
 }
