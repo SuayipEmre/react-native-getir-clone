@@ -1,4 +1,4 @@
-import { Dimensions,   StyleSheet, View } from 'react-native'
+import {   StyleSheet, View } from 'react-native'
 import React from 'react'
 import products from '../../../../../../assets/products'
 import ProductCard from '../../../../productCard'
@@ -6,13 +6,8 @@ import style from './style'
 
 
 
-const { height } = Dimensions.get('window')
-const renderedItem = ({ item }: any) => <ProductCard item={item} />
 
 const RecomendedProducts = () => {
-
-
-
 
   return (
       <View style={style.container}>
@@ -24,8 +19,6 @@ const RecomendedProducts = () => {
 }
 
 export default RecomendedProducts
-
-const styles = StyleSheet.create({})
 
 
 

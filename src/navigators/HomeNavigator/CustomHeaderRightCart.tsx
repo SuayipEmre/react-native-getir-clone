@@ -2,31 +2,37 @@ import { Dimensions, Image, StyleSheet, Text, View, TouchableOpacity } from 'rea
 import React, { useEffect, useState } from 'react'
 import colors from '../../styles/colors'
 import { useNavigation } from '@react-navigation/native'
-import { useCartTotalPrice } from '../../redux/features/cart/hooks'
+import { useCart, useCartTotalPrice } from '../../redux/features/cart/hooks'
 const { width } = Dimensions.get('window')
 
 
-const CustomHeaderRight : React.FC<any> = () => { 
+const CustomHeaderRight: React.FC<any> = () => {
   const [cartTotalPrice, setCartTotalPrice] = useState(0)
   const totalPrice = useCartTotalPrice()
+  const cart = useCart()
+
 
   useEffect(() => {
     setCartTotalPrice(totalPrice)
-  },[totalPrice])
+  }, [totalPrice])
 
   const navigation = useNavigation()
   const handleClick = () => navigation.navigate('Cart')
 
 
   return (
-     <TouchableOpacity style={styles.button_continer} activeOpacity={.8} onPress={handleClick}>
-      <View style={styles.container}>
-        <Image source={require('../../../assets/cart.png')} style={styles.image} />
-        <View style={styles.content_container}>
-          <Text style={styles.price}>{cartTotalPrice.toFixed(2)}</Text>
-        </View>
-      </View>
-    </TouchableOpacity>
+    <>
+      {
+        cart.length > 0 && <TouchableOpacity style={styles.button_continer} activeOpacity={.8} onPress={handleClick}>
+          <View style={styles.container}>
+            <Image source={require('../../../assets/cart.png')} style={styles.image} />
+            <View style={styles.content_container}>
+              <Text style={styles.price}>{cartTotalPrice.toFixed(2)}</Text>
+            </View>
+          </View>
+        </TouchableOpacity>
+      }
+    </>
   )
 }
 
@@ -35,10 +41,10 @@ export default CustomHeaderRight
 const styles = StyleSheet.create({
   button_continer: {
     width: width * 0.25,
-    marginRight :14,
+    marginRight: 14,
     backgroundColor: 'white',
     height: '100%',
-    borderRadius : 8,
+    borderRadius: 8,
   },
   container: {
     flexDirection: 'row',
@@ -48,7 +54,7 @@ const styles = StyleSheet.create({
   image: {
     height: 35,
     width: 35,
-    borderRadius : 8,
+    borderRadius: 8,
   },
   content_container: {
     height: '100%',
@@ -57,13 +63,13 @@ const styles = StyleSheet.create({
 
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius : 8,
+    borderRadius: 8,
 
   },
   price: {
     color: colors.purple,
-    fontSize :13,
-    fontWeight : '600',
+    fontSize: 13,
+    fontWeight: '600',
   },
 
 

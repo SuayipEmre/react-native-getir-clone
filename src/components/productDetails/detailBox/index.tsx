@@ -3,13 +3,13 @@ import { StyleSheet, Text, View } from 'react-native'
 import styles from './style'
 
 
-type propsType= {
+type DetailBoxType= {
     price : number,
     name : string,
     quantity : string
 }
 
-const DetailBox : React.FC<propsType> = ({price, name, quantity}) => {
+const DetailBox : React.FC<DetailBoxType> = ({price, name, quantity}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.price}>₺{price} </Text>

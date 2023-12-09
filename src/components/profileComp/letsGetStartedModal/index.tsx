@@ -3,10 +3,10 @@ import React from 'react'
 import { useModalVisible } from '../../../redux/features/profile/hooks'
 import { setModalVisible } from '../../../redux/features/profile/actions'
 import styles from './style'
-import { AntDesign, FontAwesome5, Foundation, MaterialIcons } from '@expo/vector-icons'
+import { AntDesign, FontAwesome5,  MaterialIcons } from '@expo/vector-icons'
 const LetsGetStartedModal = () => {
-
     const modalVisible = useModalVisible()
+
 
     return (
         <Modal
@@ -29,12 +29,14 @@ const LetsGetStartedModal = () => {
                             <FontAwesome5 name="facebook" size={24} color='#4648c8' />
                             <Text style={styles.login_options_text}>Facebook ile devam edin</Text>
                         </View>
-                        <View style={styles.login_options_container}>
+
+                        <TouchableOpacity style={styles.login_options_container} activeOpacity={.9}>
                             <AntDesign name="google" size={24} color="black" />
                             <Text style={styles.login_options_text}>Google ile devam edin</Text>
-                        </View>
+                        </TouchableOpacity>
+
                         <View style={styles.tel_container}>
-                        <MaterialIcons name="call" size={24} color="#fff" />
+                            <MaterialIcons name="call" size={24} color="#fff" />
                             <Text style={styles.tel_text}>Telefon ile devam edin</Text>
                         </View>
                     </View>
@@ -42,7 +44,7 @@ const LetsGetStartedModal = () => {
                     <View style={styles.or_section_container}>
                         <View style={styles.or_section_border} />
                         <Text style={styles.or_section_text}>veya</Text>
-                        <View style={styles.or_section_border}/>
+                        <View style={styles.or_section_border} />
                     </View>
 
                     <Text style={styles.continue_as_a_guest}>Misafir olarak devam edin</Text>

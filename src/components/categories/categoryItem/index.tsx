@@ -6,11 +6,11 @@ import { useNavigation } from '@react-navigation/native'
 import colors from '../../../styles/colors'
 
 
-type propsType = {
+type CategoryItemType = {
   item: categoryType
 }
 
-const CategoryItem: React.FC<propsType> = ({ item }) => {
+const CategoryItem: React.FC<CategoryItemType> = ({ item }) => {
   let URL = item.src
   const navigation = useNavigation()
 

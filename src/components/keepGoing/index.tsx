@@ -3,7 +3,7 @@ import React from 'react'
 import styles from './style'
 import { useCartTotalPrice } from '../../redux/features/cart/hooks'
 
-const KeepGoing = () => {
+const KeepGoing : React.FC = () => {
 
   const totalPrice = useCartTotalPrice()
     return (

@@ -2,7 +2,7 @@ import React from 'react'
 import {  Text,  View} from 'react-native'
 import styles from './style'
 import products from '../../../../assets/products'
-import ProductCart from '../../productCard'
+import ProductCard from '../../productCard'
 
 const ProductsContainer :  React.FC = () => {
 
@@ -13,7 +13,7 @@ const ProductsContainer :  React.FC = () => {
         <View style={styles.top_container}>
            {
             products.slice(0, 2).map((item, idx) => (
-                <ProductCart item={item} key={idx} />
+                <ProductCard item={item} key={idx} />
             ))
            }
         </View>
@@ -25,7 +25,7 @@ const ProductsContainer :  React.FC = () => {
         <View style={styles.bottom_container}>
             {
                 products.slice(2).map((item, idx) => (
-                    <ProductCart item={item} key={idx} />
+                    <ProductCard item={item} key={idx} />
                 ))
             }
         </View>

@@ -9,15 +9,14 @@ import { addToCart, getCartTotal } from '../../redux/features/cart/actions'
 import { useCart } from '../../redux/features/cart/hooks'
 
 
-type propsType = {
+type ProductCardType = {
     item: productType
 }
-const ProductCard: React.FC<propsType> = ({ item }) => {
+const ProductCard: React.FC<ProductCardType> = ({ item }) => {
     const navigation = useNavigation()
 
     const cart = useCart()
 
-    //@ts-ignore
     const handleClick = () => navigation.navigate('ProductDetails', { product: item })
 
     const handleAddToCartClick = () => {
@@ -47,7 +46,7 @@ const ProductCard: React.FC<propsType> = ({ item }) => {
             </View>
 
             <Text style={style.brand_text}>{item.name}</Text>
-            <Text style={style.product_quantity}>{item.Productquantity}.</Text>
+            <Text style={style.product_quantity}>{item.productQuantity}.</Text>
 
             <TouchableOpacity style={style.plus_icon} activeOpacity={.9} onPress={handleAddToCartClick}>
                 <Entypo name="plus" size={22} color={colors.purple} />

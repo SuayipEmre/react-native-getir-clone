@@ -4,11 +4,14 @@ import styles from './style'
 import categories from '../../../../assets/categories'
 import categoryType from '../../../models'
 import CategoryBox from './categoryBox'
-import SubCategories from './subCategories'
 
 
 
-const CategoriesHeader: React.FC<categoryType[] | any> = ({category}) => {
+type CategoriesHeaderType = {
+  category : categoryType
+}
+
+const CategoriesHeader: React.FC<CategoriesHeaderType> = ({category}) => {
   
 
 

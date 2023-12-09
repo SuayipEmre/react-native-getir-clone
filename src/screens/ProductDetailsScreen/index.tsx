@@ -24,7 +24,7 @@ const ProductDetails: React.FC<any> = ({ route }) => {
     <View style={styles.container}>
       <ScrollView >
         <ImageCarousel images={product?.images} />
-        <DetailBox quantity={product.miktar} name={product.name} price={product.price} />
+        <DetailBox quantity={product.productQuantity} name={product.name} price={product.price} />
 
         <Text style={styles.title}>Detaylar</Text>
 

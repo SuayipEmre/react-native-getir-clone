@@ -13,7 +13,7 @@ export default [
     "image": "https://cdn.getir.com/product/5ce6581ffd9b330001c4a925_tr_1561363752890.jpeg",
     "images": ["https://cdn.getir.com/product/5ce6581ffd9b330001c4a925_tr_1561363752890.jpeg"],
     "name": "Dilimlenmiş Hindistan Cevizi",
-    "Productquantity": "40 g",
+    "productQuantity": "40 g",
     "price": 50,
     "reducedPrice": 35.99
   },

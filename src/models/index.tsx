@@ -2,7 +2,7 @@ type categoryType = {
     id: string,
     name: string
     src: string,
-    subCategories: Array<String>
+    subCategories: Array<string>
 
 }
 
@@ -12,7 +12,7 @@ export type productType = {
     image: string,
     images: string[],
     name: string,
-    Productquantity: string,
+    productQuantity: string,
     price: number,
     reducedPrice?: number
 }

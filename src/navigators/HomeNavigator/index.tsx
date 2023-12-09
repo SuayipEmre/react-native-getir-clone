@@ -20,14 +20,11 @@ const HomeStack: React.FC<any> = ({ navigation, route }) => {
   const tabHiddenRoutes  = ['ProductDetails', 'Cart' ]
 
   useLayoutEffect(() => {
-    const routeName = getFocusedRouteNameFromRoute(route);
+    const routeName = getFocusedRouteNameFromRoute(route)
 
-    //@ts-ignore
-    if (tabHiddenRoutes.includes(routeName)) {
-      navigation.setOptions({ tabBarStyle: { display: "none" } });
-    } else {
-      navigation.setOptions({ tabBarStyle: { display: "true" } });
-    }
+    
+    tabHiddenRoutes.includes(routeName) ? navigation.setOptions({ tabBarStyle: { display: "none" } }) :  navigation.setOptions({ tabBarStyle: { display: "true" } })
+
   }, [navigation, route]);
 
 

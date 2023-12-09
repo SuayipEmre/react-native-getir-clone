@@ -8,11 +8,11 @@ import EditCart from './editProductCount';
 
 
 
-type propType = {
+type CartItemType = {
     product: productType & {count : number}
 }
 
-const CartItem: React.FC<propType> = ({ product }) => {
+const CartItem: React.FC<CartItemType> = ({ product }) => {
 
     return (
         <View style={styles.wrapper}>

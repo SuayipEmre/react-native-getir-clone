@@ -10,6 +10,8 @@ import CustomtabBarButton from './customNavComponents/CustomTabBarButton';
 import colors from '../styles/colors';
 import Profile from '../screens/ProfileScreen';
 import ProfileNavigator from './ProfileNavigator';
+import SearchNavigator from './SearchNavigator';
+import { View } from 'react-native';
 const Tab = createBottomTabNavigator();
 
 
@@ -27,8 +29,13 @@ const RootNavigator = () => {
                     tabBarActiveTintColor: colors.purple,
                     tabBarInactiveTintColor: '#959595',
                     headerShown: false,
-                    tabBarStyle: { height: 80 }
-                }}>
+                    tabBarStyle: { height: 80 },
+                    
+                }}
+
+                
+                      
+                >
 
                 <Tab.Screen
                     name='HomeNavigator'
@@ -41,12 +48,14 @@ const RootNavigator = () => {
                 />
 
                 <Tab.Screen
-                    name='Search'
-                    component={HomeNavigator}
+                    name='SearchNavigator'
+                    component={SearchNavigator}
                     options={{
                         tabBarIcon: ({ color }) => (
-                            <EvilIcons name="search" size={32} color={color} />
+                          
+                                <EvilIcons name="search" size={30} color={color}  />
                         )
+                      
                     }}
                 />
 
@@ -54,7 +63,7 @@ const RootNavigator = () => {
                 name='list'
                 component={HomeNavigator}
                 options={{
-                    tabBarButton : (props) => <CustomtabBarButton {...props} />
+                    tabBarButton : () => <CustomtabBarButton />
                 }}
                 />
 

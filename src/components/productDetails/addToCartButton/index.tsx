@@ -4,11 +4,11 @@ import styles from './style'
 import { addToCart, getCartTotal } from '../../../redux/features/cart/actions'
 import { productType } from '../../../models'
 
-type propsType = {
+type ButtonType = {
     product : productType
 }
 
-const Button : React.FC<propsType> = ({product}) => {
+const Button : React.FC<ButtonType> = ({product}) => {
     
     const handleAddToCartClick = () => {
       addToCart({

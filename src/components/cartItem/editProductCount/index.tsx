@@ -5,14 +5,14 @@ import styles from './style'
 import colors from '../../../styles/colors'
 import { editCart, getCartTotal, removeFromCart } from '../../../redux/features/cart/actions'
 
-type propType = {
+type EditCartType = {
     count: number
     productID : string
 }
 
 
 
-const EditCart: React.FC<propType> = ({ count, productID }) => {
+const EditCart: React.FC<EditCartType> = ({ count, productID }) => {
 
     
     const [productCount, setProductCount] = useState<number>(count)

@@ -1,17 +1,16 @@
-import { Dimensions, ScrollView, Text, View } from 'react-native'
+import {  Text, View } from 'react-native'
 import React from 'react'
 import { StepByStepContent } from '../constants'
 import RecomendedProducts from './recomendedProducts'
 
 
-const { height } = Dimensions.get('window')
 
-type propType = {
+type ContentBodyType = {
     active: string
 }
 
 
-const ContentBody: React.FC<propType> = ({ active }) => {
+const ContentBody: React.FC<ContentBodyType> = ({ active }) => {
     const { carbohydrate, sugar, energy, protein, quantity } = StepByStepContent['NutritionalValues'].content
 
 

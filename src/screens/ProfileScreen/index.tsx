@@ -7,7 +7,7 @@ import LetsGetStartedModal from '../../components/profileComp/letsGetStartedModa
 
 const Profile = () => {
   return (
-    <View style={{ flex: 1, }}>
+    <View style={styles.container}>
       <Login />
       <ContentBody />
       <Text style={styles.info}>Language - Dil</Text>
@@ -22,5 +22,6 @@ const Profile = () => {
 export default Profile
 
 const styles = StyleSheet.create({
-  info : { color: 'gray', marginTop: 14, marginLeft: 14, }
+  container : { flex: 1, },
+  info: { color: 'gray', marginTop: 14, marginLeft: 14, }
 })
