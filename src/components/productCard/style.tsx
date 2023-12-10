@@ -5,20 +5,25 @@ const {width, height} = Dimensions.get('window')
 export default StyleSheet.create({
    container:{
         width : width * 0.28,
-        height : height * 0.30,
+        height : height * 0.20,
         marginLeft : 12,
         marginTop : 12,
         marginRight : 8,
 
     },
+    active_image_container:{
+        borderWidth : .7,
+        borderColor : colors.purple,
+        borderRadius : 12,
+    },
     image:{
         width : '100%',
-        height : height * 0.15,
-        backgroundColor : '#fff',
+        height : height * 0.10,
         borderRadius : 12,
         borderWidth : 0.2,
         borderColor : 'gray',
         resizeMode : 'contain',
+    
     },
     price_container:{
         marginTop : 12,

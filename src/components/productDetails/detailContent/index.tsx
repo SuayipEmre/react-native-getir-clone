@@ -1,9 +1,9 @@
-import { Dimensions, FlatList, Text, View } from 'react-native'
+import { FlatList, StyleSheet, View } from 'react-native'
 import React, { useState } from 'react'
 import ContentItem from './contentItem'
-
-import { ContentInfo, StepByStepContent } from './constants'
+import { ContentInfo } from './constants'
 import ContentBody from './contentBody'
+import colors from '../../../styles/colors'
 
 
 
@@ -12,7 +12,7 @@ import ContentBody from './contentBody'
 const DetailContent = () => {
   const [active, setActive] = useState<string>("Ingredients",)
 
- 
+
 
 
   const renderedItem = ({ item }: any) => <ContentItem active={active} setActive={setActive} detail={item} />
@@ -20,15 +20,18 @@ const DetailContent = () => {
   return (
     <View>
 
-      <FlatList
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        data={ContentInfo}
-        keyExtractor={(item) => item.originalTitle}
-        renderItem={renderedItem}
-      />
+      <View style={styles.container}>
+        <FlatList
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          data={ContentInfo}
+          keyExtractor={(item) => item.originalTitle}
+          renderItem={renderedItem}
+        />
+      </View>
 
-      <ContentBody  active={active}/>
+
+      <ContentBody active={active} />
 
     </View>
   )
@@ -37,6 +40,19 @@ const DetailContent = () => {
 export default DetailContent
 
 
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor :'#fff',
+    shadowRadius: 10,
+    shadowOffset: {
+        width: 0,
+        height: 4,
+    },
+    shadowColor: colors.gray,
+    shadowOpacity: 0.3,
+  },
+})
 
-//active, 
+
+
 

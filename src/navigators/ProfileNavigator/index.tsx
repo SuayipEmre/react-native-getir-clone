@@ -3,6 +3,7 @@ import Profile from '../../screens/ProfileScreen'
 import colors from '../../styles/colors'
 import { Text } from 'react-native'
 import Language from '../../screens/LanguageScreen'
+import CustomHeaderRight from '../CustomHeaderRightCart'
 
 
 const Stack = createNativeStackNavigator()
@@ -24,6 +25,7 @@ const ProfileNavigator = () => {
                     },
 
                     headerTitle: () => <Text style={{ color: '#fff', fontSize: 14, fontWeight: '500' }}>Profil</Text>,
+                    headerRight: () => (<CustomHeaderRight />),
                 }}
 
             />

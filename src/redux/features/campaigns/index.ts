@@ -10,11 +10,13 @@ type stateTypes = {
         title : string,
         subtitle : string
     }[]
+    camapaignModalVisible: boolean
 }
 
 const initialState  : stateTypes = {
     activeValue:'Kampanyalar',
-    campaignContent : campaign
+    campaignContent : campaign,
+    camapaignModalVisible : false
 }
 
 export const campaignSlice = createSlice({
@@ -26,9 +28,12 @@ export const campaignSlice = createSlice({
           state.activeValue = action.payload
 
           state.activeValue == 'Kampanyalar' ? state.campaignContent = campaign : state.campaignContent = announcements
+        },
+        _setCamapaignModalVisible:  (state, action) => {
+          state.camapaignModalVisible = action.payload
         }
     }
 })
 
-export const{_setActivevalue}  = campaignSlice.actions
+export const{_setActivevalue, _setCamapaignModalVisible}  = campaignSlice.actions
 export default campaignSlice.reducer

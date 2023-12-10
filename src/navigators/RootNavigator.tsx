@@ -32,11 +32,7 @@ const RootNavigator = () => {
                     headerShown: false,
                     tabBarStyle: { height: 80 },
                     
-                }}
-
-                
-                      
-                >
+                }}>
 
                 <Tab.Screen
                     name='HomeNavigator'

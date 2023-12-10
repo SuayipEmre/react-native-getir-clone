@@ -4,7 +4,7 @@ import React from 'react'
 import styles from './style'
 import { Entypo } from '@expo/vector-icons'
 import CampaignCode from '../campaignCode'
-import { useActiveValue, useCampaignContent } from '../../../redux/features/campaings/hooks'
+import { useActiveValue, useCampaignContent } from '../../../redux/features/campaigns/hooks'
 
 const CampaignsContent = () => {
 

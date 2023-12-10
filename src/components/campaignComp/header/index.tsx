@@ -1,8 +1,8 @@
 import { Text, TouchableOpacity, View } from 'react-native'
 import React, { useState } from 'react'
 import styles from './style'
-import { setActivevalue } from '../../../redux/features/campaings/actions'
-import { useActiveValue } from '../../../redux/features/campaings/hooks'
+import { setActivevalue } from '../../../redux/features/campaigns/actions'
+import { useActiveValue } from '../../../redux/features/campaigns/hooks'
 
 
 const headerInfo = [
@@ -15,7 +15,6 @@ const headerInfo = [
         title: 'Duyurular'
     }
 ]
-
 const CampaignsHeader = () => {
     const activeValue = useActiveValue()
     return (
@@ -34,7 +33,7 @@ const CampaignsHeader = () => {
                 }
             </View>
 
-           
+
 
 
         </View>

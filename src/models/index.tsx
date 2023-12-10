@@ -1,4 +1,4 @@
-type categoryType = {
+interface categoryType {
     id: string,
     name: string
     src: string,
@@ -7,7 +7,7 @@ type categoryType = {
 }
 
 
-export type productType = {
+export interface productType {
     id: string,
     image: string,
     images: string[],

@@ -1,4 +1,11 @@
-export default [
+
+
+export type bannerImageType = {
+    id : number,
+    img : string
+}
+
+ const bannerImages : Array<bannerImageType >  = [
     {
         id : 1,
         img :'https://cdn.getir.com/misc/6571d787d613bc80d77b614e_picUrl_tr_1702019228307.jpeg'
@@ -25,3 +32,5 @@ export default [
     }
 
 ]
+
+export default bannerImages

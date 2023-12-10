@@ -16,7 +16,6 @@ const CategoryMain: React.FC = () => {
       {
         categories.map((item, idx) => (
           <CategoryItem key={idx} item={item} />
-
         ))
       }
     </View>

@@ -31,5 +31,8 @@ export default StyleSheet.create({
         color :colors.purple,
         fontSize : 14,
         fontWeight : '600',
-    }
+    },
+
+
+
 })

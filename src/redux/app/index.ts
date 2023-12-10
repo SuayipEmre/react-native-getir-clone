@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import cart from "../features/cart";
 import profile from "../features/profile";
-import campaignSlice from "../features/campaings";
+import campaignSlice from "../features/campaigns";
 
 
 export const store = configureStore({

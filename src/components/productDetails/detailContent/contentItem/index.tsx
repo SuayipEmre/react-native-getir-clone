@@ -5,16 +5,14 @@ import styles from './style'
 const ContentItem: React.FC<any> = ({ detail, setActive, active }) => {
 
 
-
-
   const handlePress = () => setActive(detail.originalTitle)
 
+  
   return (
-    <View>
+    <View style={[active == detail.originalTitle && styles.active_text_container]}>
       <TouchableOpacity style={styles.container} activeOpacity={.9} onPress={handlePress}>
-        <Text style={[styles.text, active == detail && styles.active_text]}>{detail.text} </Text>
+          <Text style={styles.text}>{detail.text} </Text>
       </TouchableOpacity>
-
 
 
     </View>

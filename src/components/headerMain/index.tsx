@@ -18,10 +18,6 @@ const HeaderMain : React.FC = () => {
 
                 </View>
 
-
-
-
-
             </View>
 
             <View style={styles.header_two}>

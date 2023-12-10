@@ -11,6 +11,7 @@ type CategoriesHeaderType = {
 }
 
 const CategoriesHeader: React.FC<CategoriesHeaderType> = ({ category }) => {
+  
 
   return (
     <ScrollView

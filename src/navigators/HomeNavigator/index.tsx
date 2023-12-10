@@ -7,7 +7,7 @@ import HomeScreen from '../../screens/HomeScreen';
 import colors from '../../styles/colors';
 import CategoryFilterScreen from '../../screens/ProductsScreen';
 import ProductDetails from '../../screens/ProductDetailsScreen';
-import CustomHeaderRight from './CustomHeaderRightCart';
+import CustomHeaderRight from '../CustomHeaderRightCart';
 import Cart from '../../screens/CartScreen';
 import { clearCart, setKeyForCartRender } from '../../redux/features/cart/actions';
 
@@ -46,7 +46,8 @@ const HomeStack: React.FC<any> = ({ navigation, route }) => {
                 marginTop: -20,
               }}
               source={require('../../../assets/getirlogo.png')} />
-          )
+          ),
+          headerRight: () => (<CustomHeaderRight />),
         }}
 
       />

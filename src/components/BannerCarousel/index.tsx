@@ -1,16 +1,17 @@
 import {  FlatList, Image, Dimensions } from 'react-native'
 import React from 'react'
-import homepageBanner from '../../../assets/homepageBanner'
+import homepageBanner, { bannerImageType } from '../../../assets/homepageBanner'
 
 
 const {width, height} = Dimensions.get('window')
 
 
 const BannerCarousel : React.FC = () => {
-    const renderedItem = ({item} : any) => (
+    const renderedItem = ({item} : {item : bannerImageType }) => (
         <Image 
         source={{uri: item.img}} 
-        style={{width : width, height : height / 4, resizeMode:'stretch'}} />
+        style={{width : width, height : height / 4, resizeMode:'stretch'}} 
+        />
     )
   return (
     <FlatList

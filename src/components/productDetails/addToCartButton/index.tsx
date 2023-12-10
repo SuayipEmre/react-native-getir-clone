@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import styles from './style'
 import { addToCart, getCartTotal } from '../../../redux/features/cart/actions'
@@ -13,7 +13,7 @@ const Button : React.FC<ButtonType> = ({product}) => {
     const handleAddToCartClick = () => {
       addToCart({
         ...product,
-        count : 0
+        count : 1
       })
       getCartTotal()
     }
