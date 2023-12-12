@@ -1,5 +1,5 @@
 import React, { useLayoutEffect } from 'react'
-import { Image, Text, TouchableOpacity} from 'react-native';
+import { Image, Text, TouchableOpacity } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Ionicons, AntDesign, FontAwesome5 } from '@expo/vector-icons';
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
@@ -10,6 +10,7 @@ import ProductDetails from '../../screens/ProductDetailsScreen';
 import CustomHeaderRight from '../CustomHeaderRightCart';
 import Cart from '../../screens/CartScreen';
 import { clearCart, setKeyForCartRender } from '../../redux/features/cart/actions';
+import PaymentScreen from '../../screens/PaymentScreen';
 
 
 const Stack = createNativeStackNavigator()
@@ -17,13 +18,15 @@ const Stack = createNativeStackNavigator()
 
 const HomeStack: React.FC<any> = ({ navigation, route }) => {
 
-  const tabHiddenRoutes  = ['ProductDetails', 'Cart' ]
+  const tabHiddenRoutes = ['ProductDetails', 'Cart', 'PaymentScreen']
 
   useLayoutEffect(() => {
     const routeName = getFocusedRouteNameFromRoute(route)
 
-    
-    tabHiddenRoutes.includes(routeName) ? navigation.setOptions({ tabBarStyle: { display: "none" } }) :  navigation.setOptions({ tabBarStyle: { display: "true" } })
+
+    tabHiddenRoutes.includes(routeName) ?
+      navigation.setOptions({ tabBarStyle: { display: "none" } }) :
+      navigation.setOptions({ tabBarStyle: { display: "true" } })
 
   }, [navigation, route]);
 
@@ -90,7 +93,7 @@ const HomeStack: React.FC<any> = ({ navigation, route }) => {
           ),
           headerRight: () => (
             <TouchableOpacity activeOpacity={.9} >
-              <AntDesign name="heart" size={22} color="#32177a" />
+              <AntDesign name="hearto" size={22} color="#fff" />
             </TouchableOpacity>
           ),
           headerTitle: () => (
@@ -118,10 +121,28 @@ const HomeStack: React.FC<any> = ({ navigation, route }) => {
           ),
 
           headerRight: () => (
-            <TouchableOpacity activeOpacity={.9} onPress={() => {clearCart(), setKeyForCartRender()}}>
+            <TouchableOpacity activeOpacity={.9} onPress={() => { clearCart(), setKeyForCartRender() }}>
               <FontAwesome5 name="trash-alt" size={20} color="#fff" />
             </TouchableOpacity>
           )
+        }}
+      />
+
+      <Stack.Screen
+        name='PaymentScreen'
+        component={PaymentScreen}
+        options={{
+          headerTintColor: '#fff',
+          headerBackTitleVisible: false,
+          headerStyle: {
+            backgroundColor: colors.purple
+          },
+          headerTitle: () => <Text style={{ color: '#fff', fontSize: 14, fontWeight: 'bold' }}>Ödeme Yap</Text>,
+          headerLeft: () => (
+            <TouchableOpacity activeOpacity={.9} onPress={() => navigation.goBack()}>
+             <AntDesign name="arrowleft" size={24} color="#fff" />
+            </TouchableOpacity>
+          ),
         }}
       />
 

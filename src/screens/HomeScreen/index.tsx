@@ -1,5 +1,5 @@
 import React from 'react'
-import HeaderMain from '../../components/headerMain'
+import DeliveryAddressInformation from '../../components/DeliveryAddressInformation'
 import { ScrollView, StyleSheet } from 'react-native'
 import BannerCarousel from '../../components/BannerCarousel'
 import CategoryMain from '../../components/categories/main'
@@ -9,7 +9,7 @@ const Home : React.FC = () => {
 
     return (
         <ScrollView style={styles.container} stickyHeaderIndices={[0]}>
-            <HeaderMain />
+            <DeliveryAddressInformation />
             <BannerCarousel />
             <CategoryMain />
         </ScrollView>

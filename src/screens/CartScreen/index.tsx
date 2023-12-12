@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { FlatList, View, Text, ScrollView } from 'react-native'
 import CartItem from '../../components/cartItem'
 import products from '../../../assets/products'
 import colors from '../../styles/colors'
-import KeepGoing from '../../components/keepGoing'
+import KeepGoing from '../../components/cartItem/keepGoing'
 import ProductCard from '../../components/productCard'
 import styles from './style'
 import { useCart, useCartKeyForRender } from '../../redux/features/cart/hooks'
@@ -15,7 +15,7 @@ const Cart: React.FC = () => {
 
 
 
-  const renderedItem = ({ item }: any) => <CartItem product={item} />
+  const renderedItem = ({ item } : any) => <CartItem product={item} />
 
   const renderFooter = () => (
     <View style={{ backgroundColor: '#fff' }} >
@@ -43,6 +43,7 @@ const Cart: React.FC = () => {
         ListFooterComponent={renderFooter}
         ListFooterComponentStyle={styles.footer_container}
       />
+      
       <KeepGoing />
 
     </View>

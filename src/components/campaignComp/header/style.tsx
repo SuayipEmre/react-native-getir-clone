@@ -30,7 +30,7 @@ export default StyleSheet.create({
     },
     active_item_container: {
         ...base_style.container,
-        backgroundColor: '#f2f0fe',
+        backgroundColor: colors.light_purple,
     },
     active_text: {
         ...base_style.text,

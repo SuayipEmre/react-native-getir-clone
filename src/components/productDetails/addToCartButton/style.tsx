@@ -13,7 +13,13 @@ export default StyleSheet.create({
         bottom: 0,
         right: 0,
         left: 0,
-
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 3,
+        },
+        shadowOpacity: .3,
+        shadowRadius: 4,
       
 
 

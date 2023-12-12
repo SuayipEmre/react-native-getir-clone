@@ -1,38 +1,51 @@
-import { StyleSheet, Dimensions,Platform } from "react-native";
-import colors from '../../styles/colors'
-const { height } = Dimensions.get('window')
+import { StyleSheet, Dimensions } from "react-native";
+import colors from "../../../../styles/colors";
 
-export default StyleSheet.create({
+const { width, height } = Dimensions.get('window')
+const base_container_style = StyleSheet.create({
     container: {
         position: 'absolute',
         bottom: 0,
         left: 0,
         right: 0,
         backgroundColor: '#fff',
-        height: height * 0.1,
         alignItems: 'center',
-        flexDirection: 'row'
     },
-    button_container: {
-     
+    content: {
+        width: width,
+        flexDirection: 'row',
+    }
+})
 
+
+export default StyleSheet.create({
+    content:{
+        ...base_container_style.content,
+         height :'100%'
+     },
+    button_container: {
+        width: '70%',
         backgroundColor: colors.purple,
         height: '55%',
-        width: '70%',
         marginLeft: 12,
         borderTopLeftRadius: 6,
         borderBottomLeftRadius: 6,
         justifyContent: 'center',
         alignItems: 'center'
     },
+    min_total_content: {
+        ...base_container_style.content,
+        height: '60%'
+    },
+
     button_text: {
         color: '#fff',
         fontWeight: 'bold',
     },
     total_price_container: {
         backgroundColor: '#fff',
-        width: '25%',
-        height : '55%',
+        width: '30%',
+        height: '55%',
         borderWidth: 1,
         borderColor: '#F5F5F5',
         alignItems: 'center',
@@ -48,12 +61,10 @@ export default StyleSheet.create({
         shadowOpacity: 0.3,
         elevation: 8,
     },
-    new_price:{
+    new_price: {
         color: colors.purple,
         fontWeight: 'bold',
         fontSize: 18,
         marginLeft: 4,
     }
 })
-
-

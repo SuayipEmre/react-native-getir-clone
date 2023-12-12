@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   },
   content_container: {
     height: '100%',
-    backgroundColor: '#F2F0FE',
+    backgroundColor: colors.light_purple,
     width: '80%',
 
     alignItems: 'center',

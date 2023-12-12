@@ -2,7 +2,8 @@ import { Text, View } from 'react-native'
 import React from 'react'
 import { StepByStepContent } from '../constants'
 import RecomendedProducts from './recomendedProducts'
-import colors from '../../../../styles/colors'
+import NutritionalValues from './nutritionalValues'
+import Additionalinformation from './additionalInformation'
 
 
 
@@ -12,25 +13,23 @@ type ContentBodyType = {
 
 
 const ContentBody: React.FC<ContentBodyType> = ({ active }) => {
-    const { carbohydrate, sugar, energy, protein, quantity } = StepByStepContent['NutritionalValues'].content
+   
 
 
-    const renderInfo = () => {
+    const renderInformation = () => {
         if (active == 'NutritionalValues') {
             return (
-                <View>
-                    <Text>karbonhidrat{quantity}    <Text>{carbohydrate}</Text>     </Text>
-                    <Text>enerji {energy}</Text>
-                    <Text>şeker {sugar}</Text>
-                    <Text>protein {protein}</Text>
-                </View>
+               <NutritionalValues />
             )
         } else if (active == 'Recommendation') {
             return <RecomendedProducts />
+        }else if(active =='AdditioanlInformation'){
+            return <Additionalinformation />
         }
         return (
             <Text>
                 {
+                    //@ts-ignore
                     StepByStepContent[active]?.content
                 }
             </Text>
@@ -39,9 +38,9 @@ const ContentBody: React.FC<ContentBodyType> = ({ active }) => {
 
     
     return (
-        <View >
+        <View style={{flex : 1,}} >
          {
-            renderInfo()
+            renderInformation()
          }
         </View>
     )

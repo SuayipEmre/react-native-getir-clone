@@ -25,7 +25,6 @@ const ProductDetails: React.FC<any> = ({ route }) => {
         <ImageCarousel images={product?.images} />
         <DetailBox quantity={product.productQuantity} name={product.name} price={product.price} />
 
-        <Text style={styles.title}>Detaylar</Text>
 
         <DetailContent />
 

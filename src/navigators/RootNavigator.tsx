@@ -8,10 +8,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import CustomtabBarButton from './customNavComponents/CustomTabBarButton';
 import colors from '../styles/colors';
-import Profile from '../screens/ProfileScreen';
 import ProfileNavigator from './ProfileNavigator';
 import SearchNavigator from './SearchNavigator';
-import { View } from 'react-native';
 import CampaignsNavigator from './CampaignsNavigator';
 const Tab = createBottomTabNavigator();
 

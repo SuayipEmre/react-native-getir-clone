@@ -7,6 +7,7 @@ import { Entypo } from '@expo/vector-icons'
 import colors from '../../styles/colors'
 import { addToCart, getCartTotal } from '../../redux/features/cart/actions'
 import { useCart } from '../../redux/features/cart/hooks'
+import EditProductCount from '../editProductCount'
 
 type ProductCardType = {
     item: productType
@@ -18,6 +19,8 @@ const ProductCard: React.FC<ProductCardType> = ({ item }) => {
 
     const [isInCart, setIsInCart] = useState<boolean>(false)
     const cart = useCart()
+
+    
 
     useEffect(() => {
         const status = cart.some(product => product.name == item.name)
@@ -58,9 +61,16 @@ const ProductCard: React.FC<ProductCardType> = ({ item }) => {
             <Text style={style.brand_text}>{item.name}</Text>
             <Text style={style.product_quantity}>{item.productQuantity}.</Text>
 
-            <TouchableOpacity style={style.plus_icon} activeOpacity={.9} onPress={handleAddToCartClick}>
-                <Entypo name="plus" size={22} color={colors.purple} />
-            </TouchableOpacity>
+            {
+                isInCart ? <View style={style.edit_product_container}>
+                    <EditProductCount  />
+
+                </View> : (
+                    <TouchableOpacity style={style.plus_icon} activeOpacity={.9} onPress={handleAddToCartClick}>
+                        <Entypo name="plus" size={22} color={colors.purple} />
+                    </TouchableOpacity>
+                )
+            }
 
         </TouchableOpacity>
 

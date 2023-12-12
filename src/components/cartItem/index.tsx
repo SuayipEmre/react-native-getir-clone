@@ -1,8 +1,6 @@
 import React from 'react'
 import { Text, View, Image } from 'react-native'
 import styles from './style'
-import { Entypo } from '@expo/vector-icons';
-import colors from '../../styles/colors';
 import { productType } from '../../models';
 import EditCart from './editProductCount';
 

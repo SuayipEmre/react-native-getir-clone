@@ -10,7 +10,7 @@ import colors from '../../../styles/colors'
 
 
 const DetailContent = () => {
-  const [active, setActive] = useState<string>("Ingredients",)
+  const [active, setActive] = useState<string>("Recommendation",)
 
 
 

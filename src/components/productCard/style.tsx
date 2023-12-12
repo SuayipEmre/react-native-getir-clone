@@ -52,6 +52,12 @@ export default StyleSheet.create({
         marginTop : 5,
         color : colors.gray
     },
+    edit_product_container:{
+        position :'absolute',
+        top : -10,
+        right : -25
+    },
+  
     plus_icon:{
         width :37,
         height : 37,

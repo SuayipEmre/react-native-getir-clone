@@ -24,18 +24,23 @@ export const StepByStepContent = {
     },
 
     AdditioanlInformation: {
-        content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate iste totam modi dignissimos ipsa necessitatibus sint aliquam quidem, sequi assumenda. "
+       text : 'Ürünün menşeine, üretici/ithalatçı bilgilerine ve uyarılara ulaşabilirsiniz. ',
+       origin : 'Türkiye',
+       foodOperator : 'lorem ipsum dolar sit amet',
+       warning : "Ürün etiket bilgileri, ürünün tedarikçisi tarafından Getir'e iletilen en güncel bilgilerdir. Ürün etiket bilgileri ile uygulamada bulunan bilgiler arasında herhangi bir farklılık bulunması halinde sorumluluk tamamen tedarikçi firmaya aittir.",
+       businessRegistrationNumber : "TR-06-34-42"
+
     }
 
 }
 
 
-type infoType = {
+type ContentInfoType = {
     originalTitle: string,
     text: string
 }[]
 
-export const ContentInfo: infoType = [
+export const ContentInfo: ContentInfoType = [
     {
         originalTitle: 'Recommendation',
         text: 'Önerilen'

@@ -1,4 +1,4 @@
-import { _addToCart, _clearCart, _editCart, _getCartTotal, _keyForCartRender, _removeFromCart,  } from ".";
+import { _addToCart, _clearCart, _editCart, _getCartTotal,  _keyForCartRender, _removeFromCart,  } from ".";
 import { productType } from "../../../models";
 import { store } from "../../app";
 
